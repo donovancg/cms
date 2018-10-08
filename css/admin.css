@@ -14,36 +14,17 @@ body {
 
 .heading-primary {
   color: #fff;
-  top: calc(50% - 5rem);
-  left: 10rem;
-  position: absolute;
-  transform: translateY(-50%); }
-
-.heading-secondary {
-  color: #fff;
-  text-align: center;
-  padding: 2rem; }
+  font-size: 2.5rem;
+  font-weight: 300; }
 
 ::selection {
   background-color: #c0392b; }
 
-.about-home__col-1-of-3 {
-  display: inline-block;
-  width: 20%; }
-
-.about-home__col-2-of-3 {
-  display: inline-block;
-  width: 70%; }
-
-.about-home__img {
-  width: 100%; }
-
-.header {
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/hero.jpg");
-  background-size: cover;
-  background-position: center; }
+header {
+  padding: 2rem;
+  background-color: #333;
+  display: flex;
+  align-items: center; }
 
 .nav {
   position: absolute;

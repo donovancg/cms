@@ -1,0 +1,21 @@
+.about-home {
+
+    &__col-1-of-3 {
+        display: inline-block;
+        width: 20%;
+    }
+    
+    &__col-2-of-3 {
+        display: inline-block;
+        width: 70%;
+        // position: absolute;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__p {
+        
+    }
+}
