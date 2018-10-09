@@ -1,0 +1,13 @@
+.main {
+    grid-column: 3 / -1;
+
+    &__el {
+        display: none;
+        background-color: $color-grey-light-3;
+        min-height: calc(100vh - 6rem);
+
+        &:target {
+            display: block;
+        }
+    }
+}

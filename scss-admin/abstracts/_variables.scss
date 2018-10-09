@@ -2,8 +2,8 @@
 
 // PRIMARY
 $color-primary: #c0392b;
-$color-primary-light: lighten(#c0392b, 15%);
-$color-primary-dark: darken(#c0392b, 15%);
+$color-primary-light: lighten(#c0392b, 5%);
+$color-primary-dark: darken(#c0392b, 5%);
 
 // SECONDARY
 
@@ -12,13 +12,19 @@ $color-white: #fff;
 $color-black: #000;
 
 // LIGHT
+$color-grey-light-1: #eee;
+$color-grey-light-2: #fafafa;
+$color-grey-light-3: #fefefe;
+$color-grey-light-4: #f6f6f6;
 
 // DARK
 $color-grey-dark-1: #444;
 $color-grey-dark-2: #333;
 
-// FONT
+// BLUE
+$color-blue: #00f;
 
+// FONT
 $default-font-size: 1.6rem;
 $default-font-family: 'Montserrat';
 $default-line-height: 150%;

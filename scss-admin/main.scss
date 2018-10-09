@@ -8,6 +8,11 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/main";
+@import "components/page";
+@import "components/posts";
+@import "components/sidebar";
+
 @import "layout/header";
 @import "layout/footer";
 @import "layout/nav";
