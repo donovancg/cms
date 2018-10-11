@@ -10,10 +10,31 @@ body {
 
 .heading-primary {
     color: $color-white;
-    top: calc(50% - 5rem);
+    top: 50%;
     left: 10rem;
     position: absolute;
     transform: translateY(-50%);
+    font-weight: 300;
+    letter-spacing: .1rem;
+    animation-name: fadeInRight;
+    animation-timing-function: ease-in-out;
+    animation-duration: .75s;
+
+    @include respond(tab-port) {
+        left: 50%;
+        display: block;
+        animation: none;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+
+    @include respond(phone) {
+        letter-spacing: 0;
+        font-size: 2.5rem;
+        white-space: normal;
+        text-align: center;
+        line-height: 110%;
+    }
 }
 
 .heading-secondary {

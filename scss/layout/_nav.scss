@@ -1,18 +1,152 @@
 .nav {
-    position: absolute;
+    // position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: $color-grey-dark-1;
-    height: 10rem;
+    background-color: $color-blue-dark-1;
+    height: 10%;
     display: flex;
     align-items: center;
     // padding: 0 5rem;
     justify-content: flex-end;
+    position: relative;
+
+    @include respond(tab-port) {
+        justify-content: center;
+        height: 7rem;
+    }
+
+    @include respond(phone-small) {
+        bottom: 1rem;
+    }
 
     &__a {
         color: $color-white;
         text-decoration: none;
         margin: 0 5rem;
+        transition: border-bottom .2s;
+
+        &:not(&--respond) {
+            border-bottom: 2px solid transparent;
+            padding: .5rem 0;
+        }
+
+        &:not(:first-child) {
+
+            @include respond(phone) {
+                display: none;
+            }
+        }
+
+        @include respond(phone) {
+            // display: block;
+        }
+
+        @include respond(tab-port) {
+            margin: 2rem;
+            font-size: 1.4rem;
+        }
+
+        &:hover {
+            border-bottom: 2px solid $color-white;
+        }
+
+        &--respond {
+            display: none;
+            transform: scale(.3);
+            border: none !important;
+
+            @include respond(phone) {
+                display: block !important;
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__icon {
+        width: 6rem;
+        height: 4.5rem;
+        position: relative;
+        margin: 5rem auto;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+
+        & span {
+            display: block;
+            position: absolute;
+            height: .5rem;
+            width: 100%;
+            background-color: $color-white;
+            border-radius: .5rem;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+          }
+          
+        
+        & span:nth-child(1) {
+            top: 0;
+        }
+          
+        & span:nth-child(2), & span:nth-child(3) {
+            top: 1.8rem;
+        }
+          
+        & span:nth-child(4) {
+            top: 3.6rem;
+        }
+          
+        &.open span:nth-child(1) {
+            top: 3.6rem;
+            width: 0%;
+            left: 50%;
+        }
+          
+        &.open span:nth-child(2) {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+          
+        &.open span:nth-child(3) {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+          
+        &.open span:nth-child(4) {
+            top: 1.8rem;
+            width: 0%;
+            left: 50%;
+        }
+    }
+
+    &--respond {
+        flex-direction: column;
+        height: auto;
+        position: relative;
+        align-items: flex-start;
+        box-shadow: 0 1rem 4rem rgba($color-black, .8);
+        
+        & .nav__a {
+            display: block;
+
+            &--respond {
+                position: absolute;
+                top: .5rem;
+                right: .5rem;
+                margin: -4.5rem 1.5rem;
+            }
+        }
     }
 }

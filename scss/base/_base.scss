@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: $color-grey-dark-2;
+}
+
+img {
+    user-select: none;
+}

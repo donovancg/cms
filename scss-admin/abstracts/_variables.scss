@@ -1,9 +1,10 @@
 // COLORS
 
 // PRIMARY
-$color-primary: #c0392b;
-$color-primary-light: lighten(#c0392b, 5%);
-$color-primary-dark: darken(#c0392b, 5%);
+// $color-primary: #c0392b;
+$color-primary: #2ecc71;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
 
 // SECONDARY
 
@@ -16,14 +17,21 @@ $color-grey-light-1: #eee;
 $color-grey-light-2: #fafafa;
 $color-grey-light-3: #fefefe;
 $color-grey-light-4: #f6f6f6;
+$color-grey-light-5: #d7d7d7;
 
 // DARK
 $color-grey-dark-1: #444;
 $color-grey-dark-2: #333;
+$color-grey-dark-3: #888;
 
 // BLUE
 $color-blue: #00f;
 
+// GREEN
+$color-green-alert: #32CD32;
+
+// RED
+$color-red-alert: #f00;
 // FONT
 $default-font-size: 1.6rem;
 $default-font-family: 'Montserrat';

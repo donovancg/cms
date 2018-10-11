@@ -1,0 +1,43 @@
+.form {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__group {
+        margin-bottom: 2rem;
+    }
+    
+    &__input {
+        padding: 1rem;
+        border: 1px solid $color-grey-light-1;
+        border-radius: .5rem;
+        transition: all .2s;
+
+        &:focus {
+            border: 1px solid $color-grey-light-5;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+        border: 1px solid $color-grey-light-1;
+        border-radius: .5rem;
+        min-height: 40rem;
+        width: 40rem;
+        padding: 1rem;
+        transition: all .2s;
+
+        &:focus {
+            border: 1px solid $color-grey-light-5;
+        }
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__form {
+        align-self: center;
+        flex-grow: 0;
+    }
+}
