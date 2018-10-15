@@ -1,4 +1,5 @@
 <?php include "../php/includes/db.php"; ?>
+<?php include "../php/includes/variables.php"; ?>
 
 <?php
 
@@ -13,11 +14,11 @@ $result_posts = mysqli_query($connect, $query_posts);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/admin.css">
-    <title>Administration &ndash; Backyard Astrophotography</title>
+    <title>Administration &ndash; <?php echo $setting['name']; ?></title>
 </head>
 <body>
     <header class="header">
-        <h1 class="heading-primary">Administration &ndash; Backyard Astrophotography</h1>
+        <h1 class="heading-primary">Administration &ndash; <?php echo $setting['name']; ?></h1>
         <!-- <a href="#" class="header__link">View Site</a> -->
     </header>
     <main>
