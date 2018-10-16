@@ -6,6 +6,9 @@
 $query_posts = "SELECT * FROM posts";
 $result_posts = mysqli_query($connect, $query_posts);
 
+$query_comments = "SELECT * FROM comments";
+$result_comments = mysqli_query($connect, $query_comments);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +16,7 @@ $result_posts = mysqli_query($connect, $query_posts);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/admin.css">
     <title>Administration &ndash; <?php echo $setting['name']; ?></title>
 </head>
@@ -105,6 +109,28 @@ $result_posts = mysqli_query($connect, $query_posts);
                 </div>
                 <div class="main__el comments" id="comments">
                     <h2 class="heading-secondary">Comments</h2>
+                    <div class="comment">
+                        <?php while($row_comments = mysqli_fetch_assoc($result_comments)) { ?>
+                            <div class="comment__container">
+                                <p class="comment__name"><?php echo $row_comments['name']; ?></p>
+                                <p class="comment__date"><?php echo $row_comments['date']; ?></p>
+                                <p class="comment__post"><?php echo "POST NAME HERE"; ?></p>
+                                <p class="comment__comment"><?php echo $row_comments['comment']; ?></p>
+                                <form action="../php/commentadmin.php" method="post" class="comment__form">
+                                    <div class="comment__group">
+                                        <label for="status" class="comment__label">Status</label>
+                                        <select name="status" id="status" class="comment__select">
+                                            <option value="pending">Pending</option>
+                                            <option value="approved">Approved</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="id" value="<?php echo $row_comments['id']; ?>">
+                                    <input type="submit" name="submitdelete" value="Delete" class="comment__button button button__full">
+                                    <input type="submit" name="submit" value="Update" class="comment__button button button__full">
+                                </form>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="main__el statistics" id="statistics">
                     <h2 class="heading-secondary">Statistics</h2>
@@ -114,9 +140,35 @@ $result_posts = mysqli_query($connect, $query_posts);
                 </div>
                 <div class="main__el settings" id="settings">
                     <h2 class="heading-secondary">Settings</h2>
+                    <div class="settings">
+                        <!--  -->
+                    </div>
                 </div>
             </div>            
         </section>
+        <?php
+        
+        if(isset($_GET['s']) AND isset($_GET['f'])) {
+            
+            ?>
+            <section class="section-notification">
+                <div class="notification <?php if($_GET['s'] === '1') { ?>notification--success<?php } else { ?>notification--fail<?php } ?>" id="js--notif">
+                    <div class="notification__header"></div>
+                    <p class="notification__text">
+                        <?php if($_GET['s'] === '1') { ?>
+                            <i class="fas fa-check-circle notification__icon"></i><?php if($_GET['f'] === 'cu') { ?>Update Successful<?php } else if ($_GET['f'] === 'cd') { ?>Deletion Successful<?php } ?>
+                        <?php } else { ?>
+                            <i class="fas fa-exclamation-circle notification__icon"></i><?php if($_GET['f'] === 'cd') { ?>Deletion Failed. Please try again.<?php } else if($_GET['f'] === 'cu') { ?>Update Failed. Please try again.<?php } ?>?>
+                        <?php } ?>
+                    </p>
+                </div>
+            </section>
+            <script>
+                setTimeout(() => {
+                    document.getElementById("js--notif").style.opacity = '0';
+                }, 500);
+            </script>
+        <?php } ?>
     </main>
 </body>
 </html>

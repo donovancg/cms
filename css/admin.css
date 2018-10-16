@@ -47,6 +47,30 @@ input, textarea {
     background-color: #25a25a;
     border: 1px solid #25a25a; }
 
+.comment {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+  padding: 0 2rem; }
+  .comment__container {
+    max-width: 30rem;
+    background-color: #f6f6f6;
+    padding: 2rem;
+    margin: auto; }
+  .comment__group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0; }
+  .comment__select {
+    flex-grow: 1;
+    padding: 1rem 2rem;
+    margin: 0 1rem; }
+  .comment__comment {
+    margin: 1rem;
+    font-style: italic; }
+
 .form {
   padding: 0 2rem;
   display: flex;

@@ -1,0 +1,32 @@
+.comment {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 2rem;
+    padding: 0 2rem;
+
+    &__container {
+        max-width: 30rem;
+        background-color: $color-grey-light-4;
+        padding: 2rem;
+        margin: auto;
+    }
+
+    &__group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    &__select {
+        flex-grow: 1;
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+    }
+
+    &__comment {
+        margin: 1rem;
+        font-style: italic;
+    }
+}
