@@ -1,0 +1,21 @@
+.view {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: $color-blue-dark-1;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+
+    &__img {
+        max-height: 80vh;
+        max-width: 90%;
+    }
+
+    &__return {
+        display: inline-block;
+        text-align: center;
+        margin-left: 5%;
+        color: $color-blue-link;
+        margin-top: 4rem;
+    }
+}

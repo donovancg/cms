@@ -1,0 +1,173 @@
+.post-single {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-blue-dark-1;
+    margin-top: 4rem;
+    color: $color-white;
+    padding: 2rem;
+
+    @include respond(tab-port) {
+        width: 80%;
+    }
+
+    @include respond(phone) {
+        width: auto;
+        margin: 4rem 2rem 0 2rem;
+    }
+
+    @include respond(phone-small) {
+        text-align: center;
+    }
+
+    &__img {
+        width: 40%;
+
+        @include respond(tab-land) {
+            width: 60%;
+        }
+    }
+
+    &__content {
+        width: 70%;
+        text-align: center;
+
+        @include respond(tab-land) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+
+    &__author, &__date, &__img {
+        margin-bottom: 2rem;
+
+        @include respond(tab-land) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__link {
+        color: $color-blue-link;
+    }
+
+    &__heading {
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
+
+    &__comments {
+        padding-top: 2rem;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        color: $color-grey-light-4;
+        
+        &--label {
+            font-size: 2rem;
+        }
+
+        &--link {
+            color: $color-blue-link;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 1rem;
+        }
+    }
+
+    &__comment {
+        width: 70%;
+        margin: auto;
+        padding-bottom: 2rem;
+
+        @include respond(tab-land) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: 90%;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-grey-light-3;
+        }
+
+        &--header {
+            display: flex;
+            justify-content: center;
+            margin: 1rem;
+        }
+
+        &--name {
+            display: inline-block;
+            font-size: 1.4rem;
+        }
+
+        &--date {
+            display: inline-block;
+            margin-left: 1rem;
+            color: $color-grey-light-3;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        &--content{
+            font-size: 1.5rem;
+        }
+    }
+
+    &__form {
+        text-align: center;
+        display: none;
+    }
+
+    &__input {
+        // background-color: $color-grey-light-3;
+        border: none;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid transparent;
+        transition: all .2s;
+        margin-top: 1rem;
+
+        &:focus {
+            border-bottom: 2px solid $color-primary;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: 20rem;
+        resize: none;
+        padding: 1rem;
+        border: none;
+        border: 1px solid transparent;
+        transition: all .2s;
+
+        &:focus {
+            border: 1px solid $color-primary;
+        }
+    }
+
+    &__submit {
+        padding: 1rem 2rem;
+        background-color: $color-primary;
+        border: none;
+        color: $color-white;
+        cursor: pointer;
+        margin-top: 1rem;
+        
+        &:hover {
+            background-color: $color-primary-dark;
+        }
+    }
+
+    &__text {
+        margin-top: 1rem;
+        display: block;
+    }
+}

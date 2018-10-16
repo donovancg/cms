@@ -10,6 +10,7 @@
     // padding: 0 5rem;
     justify-content: flex-end;
     position: relative;
+    transition: box-shadow .2s;
 
     @include respond(tab-port) {
         justify-content: center;
@@ -59,6 +60,17 @@
             @include respond(phone) {
                 display: block !important;
                 margin-left: auto;
+            }
+        }
+
+        &--cta {
+            background-color: $color-primary;
+            padding: 1rem 2rem !important;
+            border-bottom: none !important;
+            transition: background .2s;
+
+            &:hover {
+                background-color: $color-primary-dark;
             }
         }
     }

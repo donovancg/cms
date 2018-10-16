@@ -19,14 +19,14 @@ $result_posts = mysqli_query($connect, $query_posts);
     <title><?php echo $setting['name']; ?></title>
 </head>
 <body>
-    <header class="header">
-        <div class="header__container">
+    <header class="header-small">
+        <div class="header-small__container">
             <h1 class="heading-primary"><?php echo $setting['name']; ?></h1>
-            <a href="../" class="header__img--link">
-                <img src="../img/user/favicon/icon.png" alt="Logo for <?php echo $setting['name']; ?>" class="header__img">
+            <a href="../" class="header-small__img--link">
+                <img src="../img/user/favicon/icon.png" alt="Logo for <?php echo $setting['name']; ?>" class="header-small__img">
             </a>
         </div>
-        <nav class="header__nav nav" id="js--nav">
+        <nav class="header-small__nav nav" id="js--nav">
             <?php for($i = 0; $i < count($nav_links); $i++) { ?>
             <a href="../<?php echo $nav_links[$i][0]; ?>" class="nav__a"><?php echo $nav_links[$i][1]; ?></a>
             <?php } ?>
